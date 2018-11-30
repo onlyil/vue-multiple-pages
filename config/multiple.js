@@ -21,12 +21,13 @@ const createMultipleHtmlPlugins = function () {
     devPlugins.push(new HtmlWebpackPlugin({
       filename: `${dir}.html`,
       template: `${pagesPath}/${dir}/index.html`,
-      chunks: [dir],
+      chunks: [dir, 'manifest', 'vendor'],
       inject: true,
     }))
     proPlugins.push(new HtmlWebpackPlugin({
       filename: `${config.build.indexBase}/${dir}.html`,
       template: `${pagesPath}/${dir}/index.html`,
+      chunks: [dir, 'manifest', 'vendor'],
       inject: true,
       minify: {
         removeComments: true,
