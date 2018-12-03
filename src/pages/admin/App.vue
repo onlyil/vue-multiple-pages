@@ -2,6 +2,7 @@
   <div id="app">
     <h1>admin</h1>
     <img src="../../assets/logo.png">
+    <button @click="$router.push('register')">注册</button>
     <router-view/>
   </div>
 </template>
